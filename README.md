@@ -17,7 +17,7 @@ g++ -g -Wall -o main.o main.cpp readfile.cpp gkvisco.cpp -Iheaders -lfftw3 -lm
 
 # Usage
 To run the code, 2 files are necessary:
-1. A .xvg file as a result from gmx energy. The order of the data in the columns is important. The order should be: @ s0 legend "Temperature", "Pressure", "Pres-XX", "Pres-XY", "Pres-XZ","Pres-YX","Pres-YY","Pres-YZ","Pres-ZX","Pres-ZY","Pres-ZZ"
+1. A .xvg file as a result from gmx energy. The order of the data in the columns is important. The order should be: "Temperature", "Pressure", "Pres-XX", "Pres-XY", "Pres-XZ","Pres-YX","Pres-YY","Pres-YZ","Pres-ZX","Pres-ZY","Pres-ZZ"
 2. A .gro file representing your system size (only the last line is read to get the Volume).
 
 To program can be executed by running the following command (change the name of the .xvg and .gro file according to your filenames (and their paths):
