@@ -25,6 +25,9 @@ main.o energy.xvg conf.gro
 
 The output files are: SELFautocorr.xvg and SELFvoltemp.xvg These can be used for further analysis in other scripts or programs. (Currently, also a SELFvisco.xvg is written out, not including the diagonal combinations. This still has to be expanded).
 
+# Example
+Two example files are provided in the example_files directory. The example can be executed via "main.o exergy.xvg confout.gro".
+
 # TO_DO
 1. Add a function to also compute the viscosity curves directly.
 2. Add more flexibility to read files that are not GROMACS-specific and do not need a specific order of information in the input files.
