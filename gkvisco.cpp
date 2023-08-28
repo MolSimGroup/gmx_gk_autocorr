@@ -87,15 +87,18 @@ void GKvisco::m_integrate(int N)
   std::vector<double> inttemp;
   inttemp.push_back(0.0);
 
-  double integrate1, integrate2, integrate3, integrateavg = 0;
+  double integrate1, integrate2, integrate3, integrate4, integrate5, integrate6, integrateavg = 0;
   
   for (int j=1; j < N/2; ++j)
   {
     integrate1 += 0.5 * (m_fftw_data[0][j-1] + m_fftw_data[0][j]) * factor;
     integrate2 += 0.5 * (m_fftw_data[1][j-1] + m_fftw_data[1][j]) * factor;
     integrate3 += 0.5 * (m_fftw_data[2][j-1] + m_fftw_data[2][j]) * factor;
-    integrateavg += 0.5 * (m_fftw_data[0][j-1] + m_fftw_data[0][j] + m_fftw_data[1][j-1] + m_fftw_data[1][j] + m_fftw_data[2][j-1] + m_fftw_data[2][j]) / 3 * factor;
-    outvisco << j*m_timestep << "      " << integrate1 << "      " << integrate2 << "     " << integrate3 << "      " << integrateavg << std::endl; 
+    integrate4 += 0.5 * (m_fftw_data[3][j-1] + m_fftw_data[3][j]) * factor;
+    integrate5 += 0.5 * (m_fftw_data[4][j-1] + m_fftw_data[4][j]) * factor;
+    integrate6 += 0.5 * (m_fftw_data[5][j-1] + m_fftw_data[5][j]) * factor;
+    integrateavg += 0.5 * (m_fftw_data[0][j-1] + m_fftw_data[0][j] + m_fftw_data[1][j-1] + m_fftw_data[1][j] + m_fftw_data[2][j-1] + m_fftw_data[2][j] + m_fftw_data[3][j-1] + m_fftw_data[3][j] + m_fftw_data[4][j-1] + m_fftw_data[4][j] + m_fftw_data[5][j-1] + m_fftw_data[5][j]) / 6 * factor;
+    outvisco << j*m_timestep << "      " << integrate1 << "      " << integrate2 << "     " << integrate3 << "      " << integrate4 << "      " << integrate5 << "      " << integrate6 << "      " << integrateavg << std::endl; 
   } 
   std::cout << "Integration successful." << std::endl;
 }
