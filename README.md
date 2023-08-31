@@ -1,4 +1,4 @@
-# preprint
+# Preprint
 This code was used for research: https://doi.org/10.1101/2023.08.28.555069.
 
 # gmx_gk_autocorr
