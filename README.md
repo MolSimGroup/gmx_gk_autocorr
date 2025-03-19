@@ -11,7 +11,7 @@ In addition to the off-diagonal elements, the three corresponding combinations o
 This code uses the output from NVT GROMACS MD simulations to calculate the autocorrelation and viscosity using the Green-Kubo equation. 
 
 # Requirements
-The code uses fast fourier transforms to compute the autocorrelation. The fast fourier transforms are implemented by using the FFTW library (https://www.fftw.org/). GROMACS is not required to run this code, but in its current version it is hard-coded to read GROMACS specific .xvg and .gro files.
+The code uses fast fourier transforms to compute the autocorrelation. The fast fourier transforms are implemented by using the FFTW library (https://www.fftw.org/). GROMACS is not required to run this code, but in its current version it is hard-coded to read GROMACS specific .xvg and .gro files of a cubic simulation system (.gro file only necessary to get the volume).
 
 # Compilation
 The was compiled on a Linux machine with g++ by running e.g.
