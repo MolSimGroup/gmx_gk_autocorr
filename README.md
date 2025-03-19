@@ -1,5 +1,5 @@
-# Preprint
-This code was used for research: https://doi.org/10.1101/2023.08.28.555069.
+# Publication
+This code was used for research: https://doi.org/10.1021/acs.jcim.3c00947.
 
 # gmx_gk_autocorr
 Calculate the autocorrelation of the pressure tensor elements from GROMACS MD simulations and the viscosity via the Green-Kubo equation. 
