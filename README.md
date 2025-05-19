@@ -14,7 +14,7 @@ This code uses the output from NVT GROMACS MD simulations to calculate the autoc
 The code uses fast fourier transforms to compute the autocorrelation. The fast fourier transforms are implemented by using the FFTW library (https://www.fftw.org/). GROMACS is not required to run this code, but in its current version it is hard-coded to read GROMACS specific .xvg and .gro files of a cubic simulation system (.gro file only necessary to get the volume).
 
 # Compilation
-The was compiled on a Linux machine with g++ by running e.g.
+The code was compiled on a Linux machine with g++ by running e.g.
 
 g++ -g -Wall -o main.o main.cpp readfile.cpp gkvisco.cpp -Iheaders -lfftw3 -lm
 
@@ -23,7 +23,7 @@ To run the code, 2 files are necessary:
 1. A .xvg file as a result from gmx energy. The order of the data in the columns is important. The order should be: "Temperature", "Pressure", "Pres-XX", "Pres-XY", "Pres-XZ","Pres-YX","Pres-YY","Pres-YZ","Pres-ZX","Pres-ZY","Pres-ZZ"
 2. A .gro file representing your system size (only the last line is read to get the Volume).
 
-To program can be executed by running the following command (change the name of the .xvg and .gro file according to your filenames (and their paths):
+The program can be executed by running the following command (change the name of the .xvg and .gro file according to your filenames (and their paths):
 main.o energy.xvg conf.gro
 
 The output files are: SELFautocorr.xvg, SELFvoltemp.xvg, and SELFvisco.xvg. These can be used for further analysis in other scripts or programs.
